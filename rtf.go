@@ -24,10 +24,6 @@ func init() {
 		return a + b
 	}
 
-	revel.TemplateFuncs["timeStamp"] = func() int64 {
-		return time.Now().Unix()
-	}
-
 	revel.TemplateFuncs["ueq"] = func(a, b interface{}) bool {
 		return !(a == b)
 	}
@@ -86,6 +82,11 @@ func init() {
 	/**
 	Date and time functions
 	 */
+
+	revel.TemplateFuncs["timestamp"] = func() int64 {
+		return time.Now().Unix()
+	}
+
 	revel.TemplateFuncs["year"] = func() int {
 		return time.Now().Year()
 	}

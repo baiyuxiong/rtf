@@ -5,7 +5,6 @@ Frequently used template function for [revel](http://revel.github.io) framework
 
 ##Number functions
 1.	add
-2.	timeStamp
 3.	ueq
 4.	minus
 5.	multiply
@@ -17,6 +16,8 @@ Frequently used template function for [revel](http://revel.github.io) framework
 11.	percent
 
 ## Date and time functions
+
+1. timestamp
 1. year
 2. month
 3. week
