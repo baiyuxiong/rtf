@@ -2,6 +2,18 @@
 
 Frequently used template function for [revel](http://revel.github.io) framework
 
+## Using
+### 1. Import
+Import in your revel project app/init.go file
+
+````
+import	_ "github.com/baiyuxiong/rtf"
+````
+
+### 2. Use in template file
+````
+{{now}}
+````
 
 ##Number functions
 1.	add
@@ -32,11 +44,10 @@ Frequently used template function for [revel](http://revel.github.io) framework
 1. lower
 2. upper
 3. splitComma
-4. ShortContent
+4. shortContent
 5. join
 6. contains
 7. replace
-8. concat
 9. md5
 10. raw
 11. randomNumeric

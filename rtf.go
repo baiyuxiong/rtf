@@ -43,11 +43,15 @@ func init() {
 		}
 		return result
 	}
+
 	revel.TemplateFuncs["divide"] = func(args ...int) int {
-		result := 0
-		for i, value := range args {
-			if i == 0 {
-				result = value
+		if len(args) < 2{
+			return 0
+		}
+		result := args[0]
+		for _, value := range args[1:] {
+			if value == 0 {
+				return 0
 			} else {
 				result /= value
 			}
@@ -135,11 +139,13 @@ func init() {
 		return strings.Split(str, ",")
 	}
 
-	revel.TemplateFuncs["ShortContent"] = func(cont string,length int) string {
-		if len(cont) > length {
-			return cont[:(length-1)]
+	revel.TemplateFuncs["shortContent"] = func(cont string,length int) string {
+		chars := []rune(cont)
+
+		if len(chars) > length {
+			return string(chars[:length])+"..."
 		}
-		return cont + "..."
+		return cont;
 	}
 
 	revel.TemplateFuncs["join"] = func(ss []string, sept string) string {
@@ -152,10 +158,6 @@ func init() {
 
 	revel.TemplateFuncs["replace"] = func(s string, old string, new string) string {
 		return strings.Replace(s, old, new, -1)
-	}
-
-	revel.TemplateFuncs["concat"] = func(a, b string) string {
-		return a + b
 	}
 
 	revel.TemplateFuncs["md5"] = func(str string) string {
@@ -172,7 +174,7 @@ func init() {
 	var alphas = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 	var numbers = []rune("0123456789")
 
-	revel.TemplateFuncs["randomNumeric"] = func(length int) string {
+	revel.TemplateFuncs["randomAlnum"] = func(length int) string {
 		rand.Seed(time.Now().UnixNano())
 		b := make([]rune, length)
 		for i := range b {
