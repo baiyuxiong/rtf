@@ -15,7 +15,9 @@ import	_ "github.com/baiyuxiong/rtf"
 {{now}}
 ````
 
-##Number functions
+## Function list
+
+###Number functions
 1.	add
 3.	ueq
 4.	minus
@@ -27,7 +29,7 @@ import	_ "github.com/baiyuxiong/rtf"
 10.	percentageToInt
 11.	percent
 
-## Date and time functions
+### Date and time functions
 
 1. timestamp
 1. year
@@ -40,7 +42,7 @@ import	_ "github.com/baiyuxiong/rtf"
 8. dayLeft
 
 
-## String functions
+### String functions
 1. lower
 2. upper
 3. splitComma
@@ -56,5 +58,5 @@ import	_ "github.com/baiyuxiong/rtf"
 
 
 
-## Others
+### Others
 1. nil
